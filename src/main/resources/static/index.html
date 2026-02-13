@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Team member roles management application">
+    <title>Team Member Roles</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="app-wrapper">
+        <header>
+            <h1>Team Member Roles</h1>
+            <p class="subtitle">Manage your team's roles and responsibilities</p>
+            <div class="team-image-wrapper">
+                <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&h=500&fit=crop"
+                    alt="Team collaboration workspace" class="team-image">
+            </div>
+        </header>
+
+        <!-- View Mode -->
+        <section class="container" id="container" aria-label="Team member roles list">
+            <div class="section-header">
+                <svg class="section-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z">
+                    </path>
+                </svg>
+                <h2>Team Members</h2>
+            </div>
+            <ul id="member-roles" aria-live="polite"></ul>
+            <div class="button-group">
+                <button class="button" id="edit-button" aria-label="Edit team member roles">
+                    <span>✏️ Edit Roles</span>
+                </button>
+            </div>
+        </section>
+
+        <!-- Edit Mode -->
+        <section class="container" id="container-edit" aria-label="Edit team member roles">
+            <div class="section-header">
+                <svg class="section-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z">
+                    </path>
+                </svg>
+                <h2>Edit Roles</h2>
+            </div>
+            <ul id="member-roles-edit"></ul>
+            <div class="button-group">
+                <button class="button" id="save-button" aria-label="Save changes to team member roles">
+                    <span>💾 Save Changes</span>
+                </button>
+                <button class="button button-secondary" id="cancel-button" aria-label="Cancel editing">
+                    <span>✖️ Cancel</span>
+                </button>
+            </div>
+        </section>
+    </div>
+
+    <script src="app.js" defer></script>
+</body>
+
+</html>
