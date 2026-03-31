@@ -204,7 +204,7 @@ Your Docker Compose configuration is complete. Now it's time to deploy everythin
 
 3. **Fix hardcoded localhost references**
 
-    Your application's `index.html` currently has `localhost` hardcoded as the backend host. This works locally but will fail on a remote server.
+    Your application's `app.js` currently has `localhost` hardcoded as the backend host. This works locally but will fail on a remote server.
     - Update the code to use the server's IP address instead
     - Rebuild the Docker image with this fix
     - Push the updated image to Nexus
