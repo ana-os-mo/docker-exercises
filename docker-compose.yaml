@@ -1,0 +1,27 @@
+services:
+  mysql:
+    image: mysql:8.3.0
+    ports:
+      - 3306:3306
+    environment:
+      - MYSQL_ROOT_PASSWORD=exampleRootPassword
+      - MYSQL_DATABASE=team-member-projects
+      - MYSQL_USER=exampleAdminUser
+      - MYSQL_PASSWORD=exampleAdminPassword
+    volumes:
+      - mysql-data:/var/lib/mysql
+    container_name: mysql
+
+  phpmyadmin:
+    image: phpmyadmin:5.2.3
+    environment:
+      - PMA_HOST=mysql
+    ports:
+      - 8084:80
+    container_name: phpmyadmin
+    depends_on:
+      - mysql
+
+volumes:
+  mysql-data:
+    driver: local

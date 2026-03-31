@@ -3,8 +3,11 @@
  * Manages displaying and editing team member roles
  */
 
-// Configuration - automatically detects the host
-const API_BASE_URL = `${window.location.protocol}//${window.location.hostname}:8080`;
+// HOST must be the server IP or DNS name when the app is running on a server
+// and localhost when running locally
+const HOST = "localhost";
+
+const API_BASE_URL = `http://${HOST}:8080`;
 
 /**
  * Initialize the application when DOM is ready
@@ -94,9 +97,9 @@ function renderMemberList(members) {
  * @returns {string} Initials (max 2 characters)
  */
 function getInitials(name) {
-    const parts = name.trim().split(' ');
+    const parts = name.trim().split(/\s+/);
     if (parts.length >= 2) {
-        return (parts[0][0] + parts[parts.length - 1][0]).toUpperCase();
+        return (parts[0][0] + parts.at(-1)[0]).toUpperCase();
     }
     return name.substring(0, 2).toUpperCase();
 }
